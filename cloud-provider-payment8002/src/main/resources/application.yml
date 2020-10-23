@@ -1,0 +1,29 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    #当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://139.155.235.133:3306/cloud2020?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: cloud2020
+    password: benren123
+    
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  #所有entity别名类所在包
+  type-aliases-package: com.xuao.springcloud.entities
+  
+eureka:
+  client:
+    #表示是否将自己注册进入eurekaServer,默认为true
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true

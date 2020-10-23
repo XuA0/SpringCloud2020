@@ -4,6 +4,7 @@ import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +23,10 @@ import lombok.extern.slf4j.Slf4j;
 public class PaymentController {
 
 	Logger log = LoggerFactory.getLogger(PaymentController.class);
-
+	
+	@Value(value= "${server.port}")
+	private String port;
+	
 	@Resource
 	private PaymentService paymentService;
 
@@ -32,7 +36,7 @@ public class PaymentController {
 		log.info("******create result: " + result);
 
 		if (result > 0) {
-			return new CommonResult(200, "insert to database success", result);
+			return new CommonResult(200, "insert to database success . port" + port, result);
 		} else {
 			return new CommonResult(444, "insert to database failed", null);
 		}
@@ -44,7 +48,7 @@ public class PaymentController {
 		log.info("******create result: " + payment);
 
 		if (payment != null) {
-			return new CommonResult(200, "search success", payment);
+			return new CommonResult(200, "search success . port" + port, payment);
 		} else {
 			return new CommonResult(444, "search failed, id :" + id, null);
 		}
