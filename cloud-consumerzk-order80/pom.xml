@@ -9,8 +9,8 @@
 		<artifactId>SpringCloud2020</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>cloud-provider-payment8004</artifactId>
-	<name>cloud-provider-payment8004</name>
+	<artifactId>cloud-consumerzk-order80</artifactId>
+	<name>cloud-consumerzk-order80</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
