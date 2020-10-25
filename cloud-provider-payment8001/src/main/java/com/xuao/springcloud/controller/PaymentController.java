@@ -1,5 +1,7 @@
 package com.xuao.springcloud.controller;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
@@ -52,5 +54,21 @@ public class PaymentController {
 		} else {
 			return new CommonResult(444, "search failed, id :" + id, null);
 		}
+	}
+	
+	@GetMapping(value = "/payment/lb")
+	public String getPaymentLB() {
+		return port;
+	}
+	
+	@GetMapping(value = "/payment/feign/timeout ")
+	public String paymentFeignTimeout() {
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return port;
 	}
 }
