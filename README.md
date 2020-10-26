@@ -4,6 +4,7 @@
 
 项目简介:
 该项目是跟着尚硅谷周阳的Springcloud2020做出来的，里面涉及传统的 eureka、hystrix、ribbon，更是讲解了最新的 alibaba的 Nacos和sentinel、Seata，相当的给力。
+视频地址：https://www.bilibili.com/video/BV18E411x7eT?p=1  相当给力
 
 
 官网文档传送门：
