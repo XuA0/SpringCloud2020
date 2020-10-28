@@ -16,3 +16,7 @@ eureka:
   instance:
     instance-id: Hystrix80
     prefer-ip-address: true
+    
+feign:
+  hystrix:
+    enabled: true
